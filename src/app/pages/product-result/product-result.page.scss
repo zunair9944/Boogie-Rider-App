@@ -1,0 +1,123 @@
+.map {
+    margin-top: -105px;
+}
+
+.modalContainer {
+    padding-top: 24px;
+}
+
+.modalMain {
+    --background: rgba(255, 255, 255, 0.918);
+    box-shadow: 0px -14px 20px rgba(0, 0, 0, 0.05);
+    bottom: 0px;
+    pointer-events: none !important;
+    .modalContent {
+        --background: rgba(255, 255, 255, 0);
+        --padding: 0;
+        max-height: 370px;
+        --border-radius: 0px;
+    }
+    &::part(handle) {
+        background-color: #E5E5EB;
+        width: 63px;
+        height: 4px;
+        margin-top: 18px;
+    }
+    &.hidehandle {
+        --background: rgba(255, 255, 255, 1);
+        --border-radius: 0px;
+        &::part(handle) {
+            display: none;
+        }
+    }
+}
+
+ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 0;
+    display: none;
+}
+
+.arrow-down2 {
+    width: 12px;
+}
+
+.arrowDown2 {
+    position: fixed;
+    bottom: 0;
+    height: 41px;
+    margin: 0 !important;
+    background: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    margin-top: -104px;
+}
+
+.product {
+    height: 160px;
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+    ul {
+        margin: 0;
+        padding: 0;
+        .productSingle {
+            list-style-type: none;
+            background: #FFFFFF;
+            border: 1px solid #DDDEEE;
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(13.5914px);
+            border-radius: 2px;
+            padding: 12px 14px 7px 14px;
+            margin-right: 10px;
+            .imgContainer {
+                width: 64px;
+                height: 35px;
+                display: flex;
+                align-items: flex-end;
+                margin-bottom: 15px;
+            }
+            ion-img {
+                width: 63px;
+            }
+            p {}
+            ion-button {
+                font-size: 10px;
+                color: #000000;
+                font-weight: 600;
+                --padding-top: 0;
+                --padding-bottom: 0;
+                margin: 0;
+                height: 16px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .userblack {
+                    width: 8px;
+                }
+            }
+        }
+    }
+}
+
+.paymentm {
+    background: #FFFFFF;
+    border: 1px solid #DDDEEE;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(13.5914px);
+    border-radius: 5px;
+    --inner-border-width: 0;
+    --inner-border-width: 0;
+    margin: 10px 20px;
+    padding: 0 0 0 12px;
+    .arrowdown {
+        width: 16px;
+    }
+    .payment {
+        width: 26px;
+    }
+}

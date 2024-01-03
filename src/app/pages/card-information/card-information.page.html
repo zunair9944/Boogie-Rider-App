@@ -1,0 +1,107 @@
+<ion-content fullscreen="true" class="container">
+    <ion-row class="login_top">
+        <ion-col size="12" class="d-flex ion-wrap ion-justify-content-start headTop">
+            <ion-button (click)="backRoute()" fill="clear" class="ion-no-padding m-0">
+                <ion-icon src="/assets/icon/back.svg" class="arrowdown m-0" size="" slot="start"></ion-icon>
+            </ion-button>
+            <h1 class="font24 fontw700 w-100 ion-text-black ion-text-start mb-0 mt-0">Ride Preference</h1>
+        </ion-col>
+    </ion-row>
+    <ion-grid class="login_center position-relative">
+        <ion-row>
+            <ion-col size="12" class="px-0 w-100">
+                <form [formGroup]="ngForm">
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0 redDot">Card Number<span class="required"></span></ion-label>
+                        <ion-input formControlName="card_number" type="text"  placeholder="9999 9999 9999 9999" (input)="maskCardInput($event)"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['card_number'].invalid && (f['card_number'].dirty || f['card_number'].touched)">
+                        <p *ngIf="f['card_number'].errors && f['card_number'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+                    <!-- <div class="pt-30">
+                        <ion-label position="top" class="font12 mt-0 text-grey-666666 pt-30">Expiration Data</ion-label>
+                        <ion-item mode="ios" class="inputGrey">
+                            <ion-datetime formControlName="expiration_date" value="1990-02-19" placeholder="MM DD YY" class="ionDatepicker"></ion-datetime>
+                            <ion-icon src="/assets/icon/calender.svg" class="calendeicon inouticon" size="small" slot="start">
+                            </ion-icon>
+                        </ion-item>
+                    </div> -->
+                    <!-- <ion-datetime formControlName="expiration_date" presentation="date"></ion-datetime> -->
+                    <!-- <ion-modal [keepContentsMounted]="true">
+                        <ng-template>
+                            <ion-datetime formControlName="expiration_date"  presentation="date" [preferWheel]="true" id="datetime"></ion-datetime>
+                        </ng-template>
+                    </ion-modal>
+                    <ion-datetime-button datetime="datetime"></ion-datetime-button> -->
+                    
+                    
+                    
+                    <ion-modal mode="ios" [keepContentsMounted]="true">
+                        <ng-template>
+                            <ion-datetime formControlName="expiration_date"  presentation="month-year" [preferWheel]="true" id="datetime"  [min]="currentMY"
+                            max="2050-12"></ion-datetime>
+                        </ng-template>
+                    </ion-modal>
+                    <ion-col size="12" class="d-flex ion-no-wrap ion-justify-content-center" style="padding-left: 0px !important;">
+                        <ion-col size="6" style="padding-left: 0px !important;">
+                            <ion-label position="floating" class="black-color font18 mt-0 redDot">Expiration Date<span class="required"></span></ion-label>
+                            </ion-col>  
+                        <ion-col size="6" >
+                            <ion-datetime-button size="12" datetime="datetime"></ion-datetime-button>
+                        </ion-col>
+                        
+                    </ion-col>                    
+                    <div *ngIf="f['expiration_date'].invalid && (f['expiration_date'].dirty || f['expiration_date'].touched)">
+                        <p *ngIf="f['expiration_date'].errors && f['expiration_date'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+                    
+                    
+                    
+                    <div *ngIf="f['expiration_date'].invalid && (f['expiration_date'].dirty || f['expiration_date'].touched)">
+                        <p *ngIf="f['expiration_date'].errors && f['expiration_date'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+                    <ion-item class="ion-no-padding pb-20 selectItem">
+                        <ion-label position="floating" class="black-color font18 mt-0 redDot">CVC/CVV</ion-label>
+                        <ion-input formControlName="cvc" type="number" max="5"  placeholder="Enter text"></ion-input>
+                        <ion-icon src="/assets/icon/info.svg" class="arrowdown m-0" size="" slot="end"></ion-icon>
+                    </ion-item>
+                    <div *ngIf="f['cvc'].invalid && (f['cvc'].dirty || f['cvc'].touched)">
+                        <p *ngIf="f['cvc'].errors && f['cvc'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0 redDot">Card Holder Name</ion-label>
+                        <ion-input formControlName="card_holder_name" placeholder="Enter text"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['card_holder_name'].invalid && (f['card_holder_name'].dirty || f['card_holder_name'].touched)">
+                        <p *ngIf="f['card_holder_name'].errors && f['card_holder_name'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0 redDot">Billing Zip/PoStal</ion-label>
+                        <ion-input formControlName="billing_zip" type="number" placeholder="Enter text"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['billing_zip'].invalid && (f['billing_zip'].dirty || f['billing_zip'].touched)">
+                        <p *ngIf="f['billing_zip'].errors && f['billing_zip'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer class="ion-no-border ion-color-white">
+    <ion-grid class="">
+        <ion-row>
+            <ion-col size="12" class="d-flex ion-wrap ion-justify-content-center pt-0 pb-0 px-30 mb-0">
+                <div class="d-flex flex-column w-100 ion-align-items-center
+  ion-justify-content-center ">
+                    <ion-button (click)="submit()" color="light" fill="clear" class="btn-primary ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center">
+                        <span>NEXT &nbsp;
+                            &nbsp;
+                            <ion-spinner *ngIf="showLoadingSpin" class="spin-global" name="circular"></ion-spinner></span>
+                    </ion-button>
+                </div>
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-footer>

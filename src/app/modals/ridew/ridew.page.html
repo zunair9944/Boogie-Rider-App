@@ -1,0 +1,120 @@
+<div class="modalContainerUp">
+  <p class="driverWaiting2">Your Driver is coming in {{ data.pickup_time }}</p>
+  <div class="modalContainer px-20">
+    <div class="head d-flex mt-20">
+      <div>
+        <ion-img
+          class="user userCircleLg"
+          src="{{ data.driverData.profile_image }}"
+          width="63"
+        ></ion-img>
+      </div>
+      <div class="flex-fill w-100 ml-15">
+        <h4 class="font16 fontw700 text-black mt-0 mb-5">
+          {{ data.driverData.name }}
+        </h4>
+        <div class="d-flex ion-justify-content-start ion-align-items-center">
+          <ion-img class="pin" src="/assets/icon/pin2.svg"></ion-img>
+          <span class="font12 fontw400 text-black"
+            >{{ data.pickup_distance }} away</span
+          >
+        </div>
+        <ion-button
+          class="startButtn font10 fontw600 lh16"
+          expand="full"
+          fill="clear"
+        >
+          <ion-img class="start" src="/assets/icon/star-white.svg"></ion-img>
+          <span class="font12 fontw400 text-white">{{ data.driverData.ratings }}</span>
+        </ion-button>
+      </div>
+      <div class="ion-text-center min126">
+        <ion-img class="car" src="{{data.carInformation.image}}"></ion-img>
+        <p class="font12 fontw300 text-black lh18 mt-15">
+          {{ data.carInformation.name + ' - (License plate #' +
+          data.carInformation.licence_plate + ')' }}
+          <!-- Blue Toyota - 87HHBD (License plate #4564 -->
+        </p>
+      </div>
+    </div>
+    <hr class="hr" />
+    <ion-row class="borderD">
+      <ion-col size="12" class="ion-no-padding">
+        <ion-row>
+          <ion-col size="1" class="d-flex ion-align-items-center">
+            <ion-img class="w-20" src="/assets/icon/green-circle.svg"></ion-img>
+          </ion-col>
+          <ion-col size="11">
+            <h5 class="font14 fontw500 text-grey-666666 mt-0 mb-5">
+              Pickup location
+            </h5>
+            <p class="font16 text-grey-666666 fontw500 m-0">
+              {{ data.pickup_address }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="12 " class="border-Dashed ion-no-padding">
+        <ion-img class="w-35" src="/assets/icon/pin-circle.svg"></ion-img>
+      </ion-col>
+
+      <ion-col size="12" class="ion-no-padding">
+        <ion-row>
+          <ion-col size="1">
+            <ion-img class="w-20" src="/assets/icon/pin-red2.svg"></ion-img>
+          </ion-col>
+          <ion-col size="11">
+            <h5 class="font14 fontw500 text-grey-666666 mt-0 mb-5">Drop Of</h5>
+            <p class="font16 text-grey-666666 fontw500 m-0">
+              {{ data.dropoff_address }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <hr class="hr2 mt-20 mb-25" />
+    <ion-row>
+      <ion-col size="7" class="ion-no-padding">
+        <p class="font14 fontw500 text-grey-666666 lh16 mb-5 m-0">Payment</p>
+        <p class="font16 text-grey-666666 fontw500 lh19 m-0">
+          Card : ******{{ data.cardInfo }}
+        </p>
+      </ion-col>
+      <ion-col size="5" class="ion-no-padding ion-text-end">
+        <p class="font24 fontw700 lh28 text-danger m-0">{{ data.fare }}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="mt-30 mb-30">
+      <ion-col size="4" class="ion-no-padding d-flex">
+        <ion-img
+          (click)="callDriver('+923124247282')"
+          class="w-44"
+          src="/assets/icon/phone.svg"
+        ></ion-img>
+        <ion-img
+          (click)="goToChat()"
+          class="w-44 email"
+          src="/assets/icon/email.svg"
+        ></ion-img>
+      </ion-col>
+      <ion-col size="8" class="ion-no-padding ion-text-end">
+        <ion-button
+          (click)="handleCancleDriver()"
+          color="light"
+          fill="clear"
+          class="
+            btn-line
+            ion-no-margin ion-no-padding
+            text-white
+            fontw700
+            font16
+            ion-text-center
+          "
+        >
+          <span>CANCEL</span>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>

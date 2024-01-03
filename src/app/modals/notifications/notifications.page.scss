@@ -1,0 +1,46 @@
+.chatHeader {
+    ion-toolbar {
+        padding: 0 20px;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.06);
+        background: #FFFFFF;
+        .left {
+            padding: 51px 0 18px 0;
+            .cross {
+                width: 16px;
+            }
+        }
+        .right {
+            padding: 51px 0 18px 0;
+            .user {
+                width: 44px;
+            }
+        }
+    }
+}
+
+.badge {
+    --background: #F4ECF2;
+    border-radius: 19px;
+    --color: #000000;
+    --padding-start: 11px;
+    --padding-end: 11px;
+    --padding-top: 6px;
+    --padding-bottom: 6px;
+}
+
+.bell {
+    position: relative;
+    &.active {
+        &::after {
+            position: absolute;
+            content: "";
+            width: 6px;
+            height: 6px;
+            background: #EF2E24;
+            border: 2px solid #FFFFFF;
+            border-radius: 20px;
+            top: 0;
+            left: -2px;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+<ion-content fullscreen="true" class="container">
+    <ion-row class="login_top">
+        <ion-col size="12" class="d-flex ion-wrap ion-justify-content-start headTop">
+            <ion-button (click)="goBack()" fill="clear" class="ion-no-padding m-0">
+                <ion-icon src="/assets/icon/back.svg" class="arrowdown m-0" size="" slot="start"></ion-icon>
+            </ion-button>
+        </ion-col>
+    </ion-row>
+    <ion-grid class="login_center position-relative">
+        <ion-row>
+            <ion-col size="12" class="px-0 w-100">
+                <h1 class="font24 fontw700 w-100 text-black ion-text-center mb-5 mt-0">Support!</h1>
+                <!-- <p class="font12 fontw400 text-grey-666666 mb-10 ion-text-center">Please let us know how we can help.</p> -->
+
+
+            </ion-col>
+            <ion-col size="12" class="px-0 py-0">
+                <div class="phone mt-40 mx-40">
+                    <div class="d-flex ion-justify-content-center">
+                        <ion-img src="/assets/icon/phone.svg" class="phoneIcon" size="" slot="center"></ion-img>
+                        <span class="font18 fontw700 opacity75 ml-12"><a href="javascript:void(0)" (click)="call('1(888) 473-4545')">1(888) 473-4545</a></span>
+                    </div>
+                    <div class="d-flex ion-justify-content-center mt-5">
+                        <ion-img src="/assets/icon/phone.svg" class="phoneIcon" size="" slot="center"></ion-img>
+                        <span class="font18 fontw700 opacity75 ml-12"><a href="javascript:void(0)" (click)="call('(702) 473-0733')">1(702) 473-0733</a> </span>
+                    </div>
+                    <div class="d-flex ion-justify-content-center ion-align-items-center mt-5">
+                        <br><ion-img src="/assets/icon/email.svg" class="emailIcon emailIconTop" size="" slot="center"></ion-img>
+                    <span class="font18 fontw700 opacity75 ml-12"><a href="mailto:support@boogierides.com" > support@boogierides.com</a></span>
+                    </div>
+                    
+                </div>
+            </ion-col>
+            <ion-col size="12" class="px-0 py-0  d-flex ion-align-items-center flex-column ion-justify-content-center">
+                <form [formGroup]="ngForm">
+                    <div class="emailBox d-flex ion-align-items-center flex-column ion-justify-content-center  mt-40 mx-40">
+                        <ion-img src="/assets/icon/email.svg" class="emailIcon" size="" slot="center"></ion-img>
+                        <!-- <span class="font18 fontw700 opacity75 ml-12 mt-30 mb-40">You can also write to us at <a href="mailto:support@boogierides.com">support@boogierides.com</a> <br> or  using option below.</span> -->
+                        <span class="font18 fontw700 opacity75 ml-12 mt-30 mb-40">Please let us know how we can help: </span>
+                        
+                        <ion-item class="customInputComment">
+                            <ion-input formControlName="message"  type="text" placeholder="Write your issues or feedback" class="font18 fontw400 text-black"></ion-input>
+                        </ion-item>
+                        <div class="mt-20" *ngIf="f['message'].invalid && (f['message'].dirty || f['message'].touched)">
+                            <p *ngIf="f['message'].errors && f['message'].errors['required']" class="text-red-light font12 fontwbold">Please enter message .</p>
+                        </div>
+                    </div>
+                </form>
+                <ion-button (click)="submit()"  color="light " fill="clear " class="btn-primary mt-50 mx-auto d-block ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center mx-50">
+                    <span>SUBMIT </span>
+                </ion-button>
+            <!-- <p (click)="goToFaqs()" class="font18 fontw400 mt-10 text-grey-666666 mb-10 ion-text-center">Go To FAQs</p> -->
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

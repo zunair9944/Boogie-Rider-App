@@ -1,0 +1,99 @@
+.mainMenu {
+    z-index: 30050;
+}
+.edit-icon{
+    width: 70px;
+    height: 70px;
+    border-radius: 100px !important;
+    
+    position: relative;
+    .icon {
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        padding: 5px;
+        background-color: white;
+        border-radius: 10px;
+        border: solid 1px #d0cdcd;
+    }
+    ion-avatar{
+        height: 70px;
+        width: 70px;
+        position: relative;
+        z-index: 1;
+        border: 3px #d0cdcd solid;
+    }
+}
+ion-avatar {
+    --border-radius: 100px;
+}
+.user {
+    // width: 69px;
+    // height: 69px;;
+    overflow: hidden;
+    border-radius: 100px !important;
+}
+.user-img{
+    width: 69px;
+    height: 69px;
+    overflow: hidden;
+    border-radius: 100px !important;
+}
+.customSelect {
+    --background: #ffffff;
+    --background-activated: #fff;
+    --background-hover: #fff;
+    --color: #000000;
+    --border-color: transparent;
+    --min-height: 40px;
+    --inner-padding-top: 0;
+    --highlight-height: 0px;
+    --placeholder-font-weight: 500;
+    --padding-top: 0;
+    --padding-start: 0;
+    --padding-bottom: 0;
+    --placeholder-color: #666666;
+    --placeholder-opacity: 1;
+    --inner-border-width: 0;
+    --border-width: 0;
+    font-size: 18px;
+    &.pl30 {
+        --padding-start: 30px;
+    }
+    .inouticon {
+        margin-top: 31px;
+        margin-right: 8px;
+    }
+}
+
+.no-border {
+    --inner-border-width: 0;
+    --border-width: 0;
+    --inner-padding-end: 0;
+}
+
+.badge {
+    --background: #03A772;
+    border-radius: 19px;
+    --color: #ffffff;
+    --padding-start: 11px;
+    --padding-end: 11px;
+    --padding-top: 6px;
+    --padding-bottom: 6px;
+    max-height: 26px;
+}
+
+.buttonClear {
+    --padding-end: 0;
+    --padding-top: 0;
+    --padding-bottom: 0;
+}
+
+.selectItem {
+    max-height: 34px;
+    padding: 0;
+    --padding-top: 0;
+}

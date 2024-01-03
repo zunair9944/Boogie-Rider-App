@@ -1,0 +1,90 @@
+<ion-content fullscreen="true" class="container">
+    <ion-row class="login_top">
+        <ion-col size="12" class="d-flex ion-wrap ion-justify-content-start headTop">
+            <ion-button [routerLink]="['/sign-up']" fill="clear" class="ion-no-padding m-0">
+                <ion-icon src="/assets/icon/back.svg" class="arrowback m-0" size="" slot="start"></ion-icon>
+            </ion-button>
+            <h1 class="font24 fontw700 w-100 ion-text-black ion-text-start mb-0 mt-0">About Me</h1>
+        </ion-col>
+    </ion-row>
+    <ion-grid class="login_center position-relative">
+        <ion-row>
+            <ion-col size="12" class="px-0 w-100">
+                <form [formGroup]="ngForm">
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0 redDot">A fun fact about me </ion-label>
+                        <ion-input formControlName="fun_fact" placeholder="Type Here" color="dark" required="true" type="text"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['fun_fact'].invalid && (f['fun_fact'].dirty || f['fun_fact'].touched)">
+                        <p *ngIf="f['fun_fact'].errors && f['fun_fact'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">Next place i want to travel to</ion-label>
+                        <ion-input formControlName="next_place" placeholder="Type Here" color="dark" required="true" type="text"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['next_place'].invalid && (f['next_place'].dirty || f['next_place'].touched)">
+                        <p *ngIf="f['next_place'].errors && f['next_place'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">My favorite movie</ion-label>
+                        <ion-input formControlName="movie" placeholder="Type Here"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['movie'].invalid && (f['movie'].dirty || f['movie'].touched)">
+                        <p *ngIf="f['movie'].errors && f['movie'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">A fear I have</ion-label>
+                        <ion-input formControlName="fear" placeholder="Type Here"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['fear'].invalid && (f['fear'].dirty || f['fear'].touched)">
+                        <p *ngIf="f['fear'].errors && f['fear'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">Something I can't live without</ion-label>
+                        <ion-input formControlName="live_without" placeholder="Type Here"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['live_without'].invalid && (f['live_without'].dirty || f['live_without'].touched)">
+                        <p *ngIf="f['live_without'].errors && f['live_without'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">Something I am obsessed with</ion-label>
+                        <ion-input formControlName="obsessed_with" placeholder="Type Here"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['obsessed_with'].invalid && (f['obsessed_with'].dirty || f['obsessed_with'].touched)">
+                        <p *ngIf="f['obsessed_with'].errors && f['obsessed_with'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">I want to do this next time</ion-label>
+                        <ion-input formControlName="next_time" placeholder="Type Here"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['next_time'].invalid && (f['next_time'].dirty || f['next_time'].touched)">
+                        <p *ngIf="f['next_time'].errors && f['next_time'].errors['required']" class="text-red-light font12 fontwbold">This field is required.</p>
+                    </div>
+
+                    <div class="d-flex w-100 ion-align-items-center
+        ion-justify-content-center pt-40">
+                        <ion-button (click)="submit()" color="light" fill="clear" class="btn-primary ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center">
+                            <span>NEXT</span>
+                        </ion-button>
+                    </div>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer *ngIf="addMode" class="ion-no-border ion-color-white">
+    <ion-grid class="">
+        <ion-row>
+            <ion-col size="12" class="d-flex ion-wrap ion-justify-content-center pt-0 pb-0 px-30 mb-0">
+                <div class="d-flex flex-column w-100 ion-align-items-center
+    ion-justify-content-center ">
+                    <p class="font14 w-100 fontw700 ion-text-black ion-text-center mt-0 mb-20 lh16 text-uppercase">Already have an account?</p>
+                    <ion-button [routerLink]="['/login']" color="light" fill="clear" class="btn-line ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center">
+                        <span>SIGN UP</span>
+                    </ion-button>
+                </div>
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-footer>

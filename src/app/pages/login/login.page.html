@@ -1,0 +1,97 @@
+<ion-content fullscreen="true" class="container">
+    <ion-row class="login_top">
+        <ion-col size="12" class="d-flex ion-wrap ion-justify-content-center">
+            <h1 class="font24 fontw700 w-100 ion-text-black ion-text-center mb-0 mt-50 pt-20">Welcome!</h1>
+            <p class="font13 w-100 ion-text-black ion-text-center">Enter Your Sign In Details Below</p>
+        </ion-col>
+    </ion-row>
+
+    <ion-grid class="login_center position-relative">
+        <form [formGroup]="ngForm" class="login-form">
+            <ion-row>
+                <ion-col size="12">
+                    <!-- <div class="hacking-datetime">
+                        <ion-datetime presentation="date" [preferWheel]="true"></ion-datetime>
+                    </div>
+
+                    <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+                    <ion-modal [keepContentsMounted]="true">
+                        <ng-template>
+                            <ion-datetime mode="md" presentation="date" [preferWheel]="true" id="datetime"></ion-datetime>
+                        </ng-template>
+                    </ion-modal> -->
+
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12" class="px-0 w-100">
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">Username</ion-label>
+                        <ion-input name="username" formControlName="username" autocomplete="new-password"  color="dark" required="true" type="email"
+                            placeholder="Enter Username"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['username'].invalid && (f['username'].dirty || f['username'].touched)">
+                        <p *ngIf="f['username'].errors && f['username'].errors['required']" class="text-red-light font12 fontwbold">Email/User Id is required.</p>
+                    </div>
+
+
+
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">Password</ion-label>
+                        <ion-input name="password"  [type]="show ? 'text' : 'password'"  autocomplete="new-password" [ngClass]='{"shake-effect-apply": shakeEffect, "has-error": f["password"].dirty && f["password"].touched && f["password"].errors}' formControlName="password" placeholder="Enter Password"></ion-input>
+                        <ion-icon [src]="show ? '/assets/icon/view.svg' : '/assets/icon/no-view.svg'" (click)="password()"  class="inouticon" size="small" slot="end"></ion-icon>
+                    </ion-item>
+                    <!-- src="/assets/icon/lock.svg" -->
+                    <div *ngIf="f['password'].invalid && (f['password'].dirty || f['password'].touched)">
+                        <p *ngIf="f['password'].errors && f['password'].errors['required']" class="text-red-light font12 fontwbold">Password is required.</p>
+                    </div>
+                    <!-- <ion-modal #modal class="modalMain" trigger="open-modal" [showBackdrop]="false" [initialBreakpoint]="0.35" [breakpoints]="[0.35, 0.35]" handleBehavior="cycle" [backdropDismiss]="false" [isOpen]="true">
+                        <ng-template> -->
+                            <div class="d-flex w-100 ion-align-items-center
+                            ion-justify-content-start mt-20">
+                                        <ion-button fill="clear" (click)="forgotPassword()" class="ion-float-start text-underline ion-no-margin ion-no-padding text-red fontw500 font18">
+                                            <span class="text-capitalize">Forgot Password?</span>
+                                        </ion-button>
+                                    </div>
+                        <!-- </ng-template>
+                        
+                    </ion-modal> -->
+                    
+
+                    <div class="d-flex w-100 ion-align-items-center
+            ion-justify-content-center pt-50">
+                        <ion-button  (click)="login()" color="light" fill="clear" class="btn-primary ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center">
+                            <span>SIGN IN
+                            &nbsp;
+                            &nbsp;
+                            <ion-spinner *ngIf="showLoadingSpin" class="spin-global" name="circular"></ion-spinner>
+                            </span>
+                            
+                        </ion-button>
+
+                    </div>
+                </ion-col>
+            </ion-row>
+        </form>
+    </ion-grid>
+
+
+
+</ion-content>
+<ion-footer *ngIf="showSignup" class="ion-no-border ion-color-white">
+    <ion-grid class="">
+        <ion-row>
+            <ion-col size="12" class="d-flex ion-wrap ion-justify-content-center pt-0 pb-0 px-30 mb-0">
+                <div class="d-flex flex-column w-100 ion-align-items-center
+        ion-justify-content-center ">
+                    <p class="font18 w-100 fontw700 ion-text-black ion-text-center mt-0 mb-20 lh16">New to Boogie?</p>
+                    <ion-button [routerLink]="['/sign-up']" color="light" fill="clear" class="btn-line ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center">
+                        <span>SIGN UP</span>
+                    </ion-button>
+                </div>
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-footer>

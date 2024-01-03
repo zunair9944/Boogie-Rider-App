@@ -1,0 +1,22 @@
+.header {
+    padding: 30px 0 0 0;
+    position: relative;
+    z-index: 1;
+    .leftCol {
+        .menu {
+            border-radius: 100px;
+            width: 90px;
+        }
+    }
+    .bell {
+        width: 90px;
+        margin-left: auto;
+    }
+    .centerIcon {
+        padding-top: 22px;
+        .pin {
+            width: 21px;
+            margin-right: 9px;
+        }
+    }
+}

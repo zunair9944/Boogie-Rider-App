@@ -1,0 +1,94 @@
+<ion-grid fixed class="ion-no-padding">
+  <ion-row class="head">
+    <ion-col size="12" class="ion-text-center ion-no-padding px-30">
+      <h1 class="text-black font20 fontw700 lh23 mt-40 mb-0">
+        Add a Tip for Smith!
+      </h1>
+    </ion-col>
+    <ion-col size="12" class="mt-30 d-flex ion-justify-content-center">
+      <div class="box" (click)="selectTip($event, '1')">
+        <span>$1</span>
+      </div>
+      <div class="box ml-10" (click)="selectTip($event, '2')">
+        <span>$2</span>
+      </div>
+      <div class="box ml-10" (click)="selectTip($event, '5')">
+        <span>$5</span>
+      </div>
+      <div class="box ml-10" (click)="selectTip($event, '10')">
+        <span>$10</span>
+      </div>
+    </ion-col>
+    <ion-col size="12" class="mt-30 d-flex ion-justify-content-center">
+      <ion-item class="customInputBox">
+        <ion-input
+          type="number"
+          placeholder="Enter Custom Amount"
+          class="font14 fontw300 text-black"
+          (change)="handleOnChangeCustomTip($event)"
+        ></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col
+      size="12"
+      class="
+        dating
+        d-flex
+        flex-column
+        ion-justify-content-center ion-align-items-center
+        mt-20
+      "
+    >
+      <ion-img class="user userCircleLg" src="{{ data.driverData.profile_image }}"></ion-img>
+      <p class="fontw500 font18 mt-10 mb-25 text-black">
+        {{ data.driverData.name }}
+      </p>
+      <p class="fontw300 font15 mb-15 text-black">Rate your Driver</p>
+
+      <ion-rating-stars
+        [rating]="rating"
+        [color]="'grey'"
+        [filledColor]="'orange'"
+        [margin]="2"
+        [size]="25"
+        [disabled]="false"
+        (ratingChange)="rateDriver($event)"
+      ></ion-rating-stars>
+
+      <ion-item class="customInputComment">
+        <ion-input
+          type="text"
+          placeholder="Comment"
+          class="font18 fontw400 text-black"
+          [(ngModel)]="comment"
+        ></ion-input>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12 " class="ion-text-center ion-no-padding mb-30">
+      <ion-button
+        [disabled]="submitAttempted"
+        (click)="handleRatingTip()"
+        color="light "
+        fill="clear "
+        class="
+          btn-primary
+          ion-no-margin ion-no-padding
+          text-white
+          fontw700
+          font17
+          ion-text-center
+        "
+      >
+        <span>Done
+          &nbsp;
+          &nbsp;
+          <ion-spinner *ngIf="showLoadingSpin" class="spin-global" name="circular"></ion-spinner>
+        </span>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

@@ -1,0 +1,28 @@
+.btn-primary {
+    border-radius: 25px;
+    --box-shadow: 0 0 0 transparent;
+    min-height: 44px !important;
+    max-height: 44px;
+    width: 152px;
+    --padding-start: 14px;
+    --padding-end: 14px;
+    background: linear-gradient(89.93deg, #9F5F91 -27.04%, #582C57 105.09%);
+    color: #ffffff;
+    --border: solid 0px #000;
+}
+
+.btn-link-grey {
+    text-align: center;
+    text-decoration-line: underline;
+    opacity: 0.75;
+}
+
+.priceBox {
+    background: #F4ECF3;
+    border: 1px dashed #653662;
+    border-radius: 4px;
+    padding: 24px;
+    h3 {
+        font-size: 50px
+    }
+}

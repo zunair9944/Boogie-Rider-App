@@ -1,0 +1,90 @@
+<ion-content fullscreen="true" class="container">
+    <ion-row class="login_top">
+        <ion-col size="12" class="d-flex ion-wrap ion-justify-content-start headTop">
+            <ion-button (click)="backRoute()" fill="clear" class="ion-no-padding m-0">
+                <ion-icon src="/assets/icon/back.svg" class="arrowback m-0" size="" slot="start"></ion-icon>
+            </ion-button>
+            <h1 class="font24 fontw700 w-100 ion-text-black ion-text-start mb-0 mt-0">{{ addMode ? 'Create' : 'Update'}} Account</h1>
+        </ion-col>
+    </ion-row>
+    <ion-grid class="login_center position-relative">
+        <ion-row>
+            <ion-col size="12" class="px-0 w-100">
+                <form [formGroup]="ngForm">
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0 redDot">Full Name<span class="required"></span></ion-label>
+                        <!-- <ion-input placeholder="Enter text"></ion-input> -->
+                        <ion-input [disabled]="!addMode" placeholder="Enter text" formControlName="full_name"  color="dark" required="true" type="text"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['full_name'].invalid && (f['full_name'].dirty || f['full_name'].touched)">
+                        <p *ngIf="f['full_name'].errors && f['full_name'].errors['required']" class="text-red-light font12 fontwbold">Name is required.</p>
+                    </div>
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">Email<span class="required"></span></ion-label>
+                        <ion-input [disabled]="!addMode" placeholder="Enter text" formControlName="email"  color="dark" required="true" type="email" [ngClass]='{"shake-effect-apply": shakeEffect, "has-error": f["email"].dirty && f["email"].touched && f["email"].errors}'></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)">
+                        <p *ngIf="f['email'].errors && f['email'].errors['required']" class="text-red-light font12 fontwbold">Email field is required.</p>
+                        <p *ngIf="f['email'].errors && f['email'].errors['pattern']" class="text-red-light font12 fontwbold">Invalid email provided.</p>
+                        <!-- <p *ngIf="f['email'].errors.['required']" class="text-red-light font12 ">Email is required.</p>
+                        <p *ngIf="f['email'].errors.email" class="text-red-light font12 ">Invalid email provided (only ending with .com allowed).</p> -->
+                    </div>
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">Username<span class="required"></span></ion-label>
+                        <ion-input [disabled]="!addMode"  placeholder="Enter text" formControlName="username"  color="dark" required="true" type="email"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['username'].invalid && (f['username'].dirty || f['username'].touched)">
+                        <p *ngIf="f['username'].errors && f['username'].errors['required']" class="text-red-light font12 fontwbold">Username field is required.</p>
+                    </div>
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">Phone Number<span class="required"></span></ion-label>
+                        <ion-input [disabled]="!addMode" formControlName="contact_number"  type="number" placeholder="Enter text"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['contact_number'].invalid && (f['contact_number'].dirty || f['contact_number'].touched)">
+                        <p *ngIf="f['contact_number'].errors && f['contact_number'].errors['required']" class="text-red-light font12 fontwbold">Phone number is required.</p>
+                    </div>
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">Password<span class="required"></span></ion-label>
+                        <ion-input [disabled]="!addMode"  formControlName="password" type="password" placeholder="Enter text"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['password'].invalid && (f['password'].dirty || f['password'].touched)">
+                        <p *ngIf="f['password'].errors && f['password'].errors['required']" class="text-red-light font12 fontwbold">Passowrd is required.</p>
+                        <p *ngIf="f['password'].errors && f['password'].errors['minlength']" class="text-red-light font12 fontwbold">Password must be min 8 characters.</p>
+                    </div>
+                    <ion-item class="customInput">
+                        <ion-label position="floating" class="black-color font18 mt-0">Confirm Password<span class="required"></span></ion-label>
+                        <ion-input [disabled]="!addMode"  formControlName="retype_password"  type="password" placeholder="Enter text"></ion-input>
+                    </ion-item>
+                    <div *ngIf="f['retype_password'].invalid && (f['retype_password'].dirty || f['retype_password'].touched)">
+                        <p *ngIf="f['retype_password'].errors && f['retype_password'].errors['required']" class="text-red-light font12 fontwbold">Retype Password is required.</p>
+                        <p *ngIf="f['retype_password'].errors && f['retype_password'].errors['minlength']" class="text-red-light font12 fontwbold">Retype Password must be min 8 characters.</p>
+                        <p *ngIf="f['retype_password'].errors && f['retype_password'].errors['confirmPasswordValidator']" class="text-red-light font12 fontwbold">Passsword and Confirm Password didn't match.</p>
+                    </div>
+                    <div class="d-flex w-100 ion-align-items-center
+        ion-justify-content-center pt-40">
+                        <ion-button (click)="submit()" color="light" fill="clear" class="btn-primary ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center">
+                            <span>NEXT&nbsp;&nbsp;<ion-spinner *ngIf="showLoadingSpin" class="spin-global" name="circular"></ion-spinner>
+                            </span>
+                        </ion-button>
+                    </div>
+                </form>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer *ngIf="addMode && showSignup" class="ion-no-border ion-color-white">
+    <ion-grid class="">
+        <ion-row>
+            <ion-col size="12" class="d-flex ion-wrap ion-justify-content-center pt-0 pb-0 px-30 mb-0">
+                <div class="d-flex flex-column w-100 ion-align-items-center
+      ion-justify-content-center ">
+                    <p class="font14 w-100 fontw700 ion-text-black ion-text-center mt-0 mb-20 lh16 text-uppercase">Already have an account?</p>
+                    <ion-button [routerLink]="['/login']" color="light" fill="clear" class="btn-line ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center">
+                        <span>SIGN IN</span>
+                    </ion-button>
+                </div>
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-footer>

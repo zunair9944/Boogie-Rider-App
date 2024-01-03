@@ -1,0 +1,19 @@
+<ion-grid fixed class="ion-no-padding">
+    <ion-row>
+        <ion-col (click)="closeModel()" size="12" class="pt-20 px-20 d-flex ion-justify-content-end">
+            <ion-img src="/assets/icon/cross-3.svg" class="w-16"></ion-img>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size="12" class="ion-text-center ion-no-padding px-30">
+            <h1 class="font18 fontw700 lh23 mt-15 mb-20 text-red">Delete Confirmation!</h1>
+            <h1 class="font13 fontw400 text-grey-44 lh23 mt-0 mb-0">Are you sure you wan to delete selected record(s).</h1>
+        </ion-col>
+        <ion-col size="12" class="ion-text-center  ion-no-padding mt-20 pt-30 mb-30 px-50">
+            <ion-button (click)="closeModel()" color="light" fill="clear" class="btn-line ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center">
+                <span>Yes, Delete</span>
+            </ion-button>
+        </ion-col>
+
+    </ion-row>
+</ion-grid>

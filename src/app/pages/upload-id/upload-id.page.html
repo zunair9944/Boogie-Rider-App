@@ -1,0 +1,44 @@
+<ion-content fullscreen="true" class="container">
+    <ion-row class="login_top">
+        <ion-col size="12" class="d-flex ion-wrap ion-justify-content-start headTop">
+            <ion-button [routerLink]="['/about-me']" fill="clear" class="ion-no-padding m-0">
+                <ion-icon src="/assets/icon/back.svg" class="arrowback m-0" size="" slot="start"></ion-icon>
+            </ion-button>
+            <h1 class="font24 fontw700 w-100 ion-text-black ion-text-start mb-0 mt-0">About Me</h1>
+        </ion-col>
+    </ion-row>
+    <ion-grid class="login_center position-relative">
+        <ion-row>
+            <ion-col size="12" class="px-0 w-100">
+                <form [formGroup]="ngForm">
+                    <ion-img class="profilePicture mx-auto" [src]="imgURL"></ion-img>
+                    <div class="mt-20" *ngIf="f['userIdentity'].invalid && (f['userIdentity'].dirty || f['userIdentity'].touched)">
+                        <p *ngIf="f['userIdentity'].errors && f['userIdentity'].errors['required']" class="text-red-light font12 fontwbold">User Identity is required.</p>
+                    </div>
+                </form>
+                <div class="d-flex w-100 ion-align-items-center
+  ion-justify-content-center pt-40">
+                    <!-- <ion-button (click)="openIonModal()" color="light" fill="clear" class="btn-line mx215 ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center"> -->
+                    <ion-button (click)="upload()" color="light" fill="clear" class="btn-line mx215 ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center">
+                        <span>Upload New ID</span>
+                    </ion-button>
+
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer class="ion-no-border ion-color-white">
+    <ion-grid class="">
+        <ion-row>
+            <ion-col size="12" class="d-flex ion-wrap ion-justify-content-center pt-0 pb-0 px-30 mb-0">
+                <div class="d-flex flex-column w-100 ion-align-items-center
+  ion-justify-content-center ">
+                    <ion-button (click)="submit()" color="light" fill="clear" class="btn-primary ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center">
+                        <span>NEXT&nbsp;&nbsp;<ion-spinner *ngIf="showLoadingSpin" class="spin-global" name="circular"></ion-spinner></span>
+                    </ion-button>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

@@ -1,0 +1,138 @@
+<ion-content fullscreen="true" class="container">
+    <ion-row class="login_top">
+        <ion-col size="12" class="d-flex ion-wrap ion-justify-content-start headTop">
+            <ion-button [routerLink]="['/home']" fill="clear" class="ion-no-padding m-0">
+                <ion-icon src="/assets/icon/back.svg" class="arrowdown m-0" size="" slot="start"></ion-icon>
+            </ion-button>
+            <h1 class="font24 fontw700 w-100 ion-text-black ion-text-start mb-0 mt-0">Ride History</h1>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!rideList.length" class="d-flex ion-wrap ion-justify-content-start headTop">
+        <ion-col siz="12"  class="mt-10 ion-justify-content-center">
+            <p class="">Your ride list is empty yet.</p>
+        </ion-col>
+    </ion-row>
+    <ion-grid class="ride_center position-relative ion-no-padding">
+        <hr class="hr mt-30 mb-30">
+        <ion-row class="mb-0">
+            <ion-col size="12">
+                <ion-accordion-group class="accourdian">
+                    <ion-accordion *ngFor="let ride of rideList; let i = index;" value="{{i}}" toggleIconSlot="none">
+                        <ion-item slot="header" class="accourdianHead">
+                            <div class="historyList  d-flex ion-justify-content-between ion-align-items-end w-100">
+                                <div class="d-flex ion-align-items-center">
+                                    <div>
+                                        <p class="font16 fontw400 text-black lh17 ml-12 mb-5">{{ride.riderData.name}} - {{ride.driverData.name}}</p>
+                                        <p class="font14 fontw400 text-red lh17 ml-12 mb-0">{{ride.fare}}</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ion-align-items-end ion-justify-content-start">
+                                    <p class="font14 fontw400 text-grey-666666 lh14">{{ride.ride_request_time}}</p>
+                                </div>
+                            </div>
+                        </ion-item>
+                        <div class="ion-padding content" slot="content">
+                            <p class="font16 fontw700 lh24 text-black mb-15">{{ride.driverData.name}}</p>
+                            <ion-row>
+                                <ion-col size="12" class="d-flex ion-justify-content-between w-100">
+                                    <div class="d-flex ion-align-items-center ion-justify-content-start">
+                                        <ion-icon src="/assets/icon/star-yellow.svg" class="w-16 m-0" size="16" slot="start"></ion-icon>
+                                        <p class="font12 fontw300 text-black lh18 ml-8">{{ride.rating}}</p>
+                                    </div>
+                                    <div class="d-flex ion-align-items-center ion-justify-content-center">
+                                        <ion-icon src="/assets/icon/car-grey.svg" class="w-16 m-0" size="16" slot="start"></ion-icon>
+                                        <p class="font12 fontw300 text-black lh18 ml-8">{{ride.carInformation.name}} - {{ride.carInformation.licence_plate}}</p>
+                                    </div>
+                                    <div class="d-flex ion-align-items-center ion-justify-content-end">
+                                        <ion-icon src="/assets/icon/calender-grey.svg" class="w-16 m-0" size="16" slot="start"></ion-icon>
+                                        <p class="font12 fontw300 text-black lh18 ml-8">{{ride.ride_date}}</p>
+                                    </div>
+                                </ion-col>
+                                <ion-col size="12">
+                                    <div class="d-flex ion-align-items-center ion-justify-content-center mt-15 mb-20">
+                                        <p class="font14 fontw400 lh16 text-grey-666666 mb-15 text-nowrap">Start: {{ride.start_time}}</p>
+                                        <p class="font14 fontw400 lh16 text-black mb-15 w-100 text-truncate ml-20">{{ride.pickup_address}}...</p>
+                                    </div>
+                                    <div class="d-flex ion-align-items-center ion-justify-content-center mt-15 mb-20">
+                                        <p class="font14 fontw400 lh16 text-grey-666666 mb-15 text-nowrap">End: {{ride.end_time}}</p>
+                                        <p class="font14 fontw400 lh16 text-black mb-15 w-100 text-truncate ml-20">{{ride.dropoff_address}}...</p>
+                                    </div>
+                                    <ion-img class="w-100 rounded-12" src="{{ride.ride_image || '/assets/icon/map-small.png'}}"></ion-img>
+
+                                    <div class="mt-25 d-flex ion-justify-content-between ion-align-items-end w-100">
+                                        <div class="d-flex ion-align-items-center">
+                                            <div>
+                                                <p class="font14 fontw500 text-grey-a9 lh17 ml-12 mb-5">Payment</p>
+                                                <p class="font16 fontw500 text-black lh17 ml-12 mb-0">Card : ********** {{ride.cardInfo}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column ion-align-items-end ion-justify-content-start">
+                                            <p class="font24 fontw500 text-red lh29">{{ride.fare}}</p>
+                                        </div>
+                                    </div>
+
+                                </ion-col>
+                            </ion-row>
+                        </div>
+                    </ion-accordion>
+                    <!-- <ion-accordion value="second" toggleIconSlot="none">
+                        <ion-item slot="header" class="accourdianHead">
+                            <div class="historyList  d-flex ion-justify-content-between ion-align-items-end w-100">
+                                <div class="d-flex ion-align-items-center">
+                                    <div>
+                                        <p class="font16 fontw400 text-black lh17 ml-12 mb-5">Pemu JunctIon - Seriki Lane</p>
+                                        <p class="font14 fontw400 text-red lh17 ml-12 mb-0">$16.00</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ion-align-items-end ion-justify-content-start">
+                                    <p class="font14 fontw400 text-grey-666666 lh14">2 Hours ago</p>
+                                </div>
+                            </div>
+                        </ion-item>
+                        <div class="ion-padding content" slot="content">
+                            <p class="font16 fontw700 lh24 text-black mb-15">Smith Johns Doe</p>
+                            <ion-row>
+                                <ion-col size="12" class="d-flex ion-justify-content-between w-100">
+                                    <div class="d-flex ion-align-items-center ion-justify-content-start">
+                                        <ion-icon src="/assets/icon/star-yellow.svg" class="w-16 m-0" size="16" slot="start"></ion-icon>
+                                        <p class="font12 fontw300 text-black lh18 ml-8">4.8</p>
+                                    </div>
+                                    <div class="d-flex ion-align-items-center ion-justify-content-center">
+                                        <ion-icon src="/assets/icon/car-grey.svg" class="w-16 m-0" size="16" slot="start"></ion-icon>
+                                        <p class="font12 fontw300 text-black lh18 ml-8">Blue Toyota - 87HHBD</p>
+                                    </div>
+                                    <div class="d-flex ion-align-items-center ion-justify-content-end">
+                                        <ion-icon src="/assets/icon/calender-grey.svg" class="w-16 m-0" size="16" slot="start"></ion-icon>
+                                        <p class="font12 fontw300 text-black lh18 ml-8">18 Jan 2022</p>
+                                    </div>
+                                </ion-col>
+                                <ion-col size="12">
+                                    <div class="d-flex ion-align-items-center ion-justify-content-center mt-15 mb-20">
+                                        <p class="font14 fontw400 lh16 text-grey-666666 mb-15 text-nowrap">Start 6:25PM</p>
+                                        <p class="font14 fontw400 lh16 text-black mb-15 w-100 text-truncate ml-20">Nieuwe Hoogstraat Nieuwe Hoogs...</p>
+                                    </div>
+                                    <ion-img class="w-100 rounded-12" src="/assets/icon/map-small.png"></ion-img>
+
+                                    <div class="mt-25 d-flex ion-justify-content-between ion-align-items-end w-100">
+                                        <div class="d-flex ion-align-items-center">
+                                            <div>
+                                                <p class="font14 fontw500 text-grey-a9 lh17 ml-12 mb-5">Payment</p>
+                                                <p class="font16 fontw500 text-black lh17 ml-12 mb-0">Card : ********** 7846</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column ion-align-items-end ion-justify-content-start">
+                                            <p class="font24 fontw500 text-red lh29">$16.00</p>
+                                        </div>
+                                    </div>
+
+                                </ion-col>
+                            </ion-row>
+                        </div>
+
+                    </ion-accordion> -->
+                </ion-accordion-group>
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-content>

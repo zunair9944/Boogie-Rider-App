@@ -1,0 +1,64 @@
+.container {
+    --padding-bottom: 50px;
+}
+
+.login_center {
+    padding: 2vh 41px 2vh 41px;
+}
+
+ion-footer {
+    background: #FFFFFF;
+    border-radius: 18px 18px 0 0;
+    padding: 40px 0;
+}
+
+.arrowdown {
+    width: 24px;
+}
+
+.arrowback {
+    width: 16px;
+    margin-right: -10px;
+}
+
+.selectItem {
+    margin-bottom: 30px !important;
+}
+.backBtn {
+    background: linear-gradient(0deg, #fa7c27 0%, #fed45e 100%);
+    width: 26px;
+    height: 19px;
+    padding: 12px 19px;
+    margin: 0;
+  }
+  
+  
+  
+  .genderGroup{
+    ion-item{
+      --inner-border-width: 0;
+      --padding-start: 0;
+      --min-height: 25px;
+      ion-radio{
+        margin-left: 0;
+        margin-right: 5px;
+        margin-top: 0;
+        margin-bottom: 0;
+        --color:#CDCDCD;
+        --color-checked:#6096FF;
+      }
+      ion-label{
+        margin: 0;
+      }
+    }
+  }
+  .ionDatepicker{
+    padding-left: 30px;
+    font-size: 12px;
+  }
+  .calendeicon{
+    position: absolute;
+    margin-top: 8px;
+  
+  }
+  

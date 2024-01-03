@@ -1,0 +1,269 @@
+<div class="modalContainerUp">
+  <div class="modalContainer ion-margin-top px-20">
+    <ion-label *ngIf="vList == false" class="font22 fontw500 lh26 text-black"
+      >Where do you want to go?</ion-label
+    >
+    <ion-item class="customWithIcon mt-20" id="pickupItem">
+      <ion-input
+        #pickUp
+        id="pickUp"
+        color="dark"
+        name="text"
+        type="text"
+        placeholder="Enter Pickup Point"
+        class="locationInput"
+        value=""
+      ></ion-input>
+      <!-- <ion-searchbar #pickupEle></ion-searchbar> -->
+      <!-- <input
+        type="text"
+        id="pac-input"
+        type="text"
+        placeholder="Enter Pickup Point"
+      /> -->
+
+      <ion-icon
+      (click)="getNow()"
+      *ngIf="!showAdLoader"
+        src="/assets/icon/pin-red.svg"
+        class="pin"
+        size="small"
+        slot="start"
+      ></ion-icon>
+      <ion-icon
+      *ngIf="!showAdLoader"
+      (click)="getNow()"
+        src="/assets/icon/arrow-down.svg"
+        class="arrow"
+        size="small"
+        slot="end"
+      ></ion-icon>
+      <ion-spinner style="width: 20px; height: 20px;" *ngIf="showAdLoader"></ion-spinner>
+      <ion-label (click)="getNow()" class="now font14 fontw400">Now</ion-label>
+    </ion-item>
+    <ion-item class="customWithIcon ps8 mt-12" id="dripoffItem">
+      <ion-input
+        #dropOff
+        id="dropOff"
+        color="dark"
+        name="text"
+        type="text"
+        placeholder="Enter Drop off"
+        value=""
+      ></ion-input>
+      <!-- <ion-searchbar #dropOffEle></ion-searchbar> -->
+      <ion-icon
+        src="/assets/icon/drop-off.svg"
+        class="drop"
+        size="small"
+        slot="start"
+      ></ion-icon>
+    </ion-item>
+  </div>
+  <div
+    *ngIf="showVSpin"
+    class="ion-margin-top"
+    style="float: left; margin-left: 45%"
+  >
+    <ion-spinner name="circular" style="color: purple"></ion-spinner>
+  </div>
+  <!-- Ride History Home Page -->
+  <ion-content *ngIf="history == true" class="modalContent">
+    <div class="ion-no-margin px-20" (click)="goTo()">
+      <ion-row class="mt-40 mb-40">
+        <ion-col class="ion-no-padding">
+          <p class="font18 fontw600 lh21">History</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw400 lh21 ion-text-end text-grey-666666">
+            Previous History
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="">
+        <ion-col size="12" class="ion-no-padding">
+          <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17">$22.05</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">
+            18 Jan 6:20PM
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="mt-15">
+        <ion-col size="12" class="ion-no-padding">
+          <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17">$22.05</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">
+            18 Jan 6:20PM
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="mt-15">
+        <ion-col size="12" class="ion-no-padding">
+          <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17">$22.05</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">
+            18 Jan 6:20PM
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="mt-15">
+        <ion-col size="12" class="ion-no-padding">
+          <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17">$22.05</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">
+            18 Jan 6:20PM
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="mt-15">
+        <ion-col size="12" class="ion-no-padding">
+          <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17">$22.05</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">
+            18 Jan 6:20PM
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="mt-15">
+        <ion-col size="12" class="ion-no-padding">
+          <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17">$22.05</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">
+            18 Jan 6:20PM
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="mt-15">
+        <ion-col size="12" class="ion-no-padding">
+          <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17">$22.05</p>
+        </ion-col>
+        <ion-col class="ion-no-padding">
+          <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">
+            18 Jan 6:20PM
+          </p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-content>
+
+  <!-- Vehicle List Home Page -->
+
+  <div *ngIf="vList == true" class="modalContainerUp">
+    <div class="modalContainer px-20">
+      <ion-content scrollX="true" scrollY="false" class="product mt-30">
+        <ul class="d-flex ion-align-items-center vlist">
+          <li
+            (click)="selectVehicle($event, vehicle)"
+            *ngFor="let vehicle of vehicleTypeList; let i = index;"
+            class="productSingle ion-text-center"
+          >
+            <div class="imgContainer">
+              <ion-img
+                class="arrow-down2"
+                src="{{vehicle.service_image || '/assets/icon/car1.png'}}"
+              ></ion-img>
+            </div>
+            <p class="font10 fontw700 lh16">{{vehicle.name}}</p>
+            <ion-button class="font10 fontw600 lh16" expand="full" fill="clear">
+              <ion-img
+                class="userwhite"
+                src="/assets/icon/user-white.svg"
+              ></ion-img>
+
+              <ion-img
+                class="userblack"
+                src="/assets/icon/user-black.svg"
+              ></ion-img>
+
+              <span>{{'1-'+vehicle.capacity}}</span>
+            </ion-button>
+            <h3 class="font12 fontw300 lh16 m-0">${{vehicle.base_fare}}</h3>
+          </li>
+        </ul>
+      </ion-content>
+    </div>
+    <ion-item class="paymentm ion-no-padding pb-30 selectItem">
+      <ion-select
+        (ionChange)="changeCard($event)"
+        class="customSelect pl30 w-100"
+        interface="popover"
+        placeholder="Select"
+        mode="ios"
+        [(ngModel)]="selectedCard"
+      >
+        <ion-select-option
+          *ngFor="let card of userCardList; let i = index;"
+          [value]="card.id">****-****-****-{{card.card_number}}</ion-select-option
+        >
+      </ion-select>
+      <ion-icon
+        src="/assets/icon/visa.svg"
+        class="payment m-0"
+        size=""
+        slot="start"
+      ></ion-icon>
+      <ion-icon
+        src="/assets/icon/arrow-down.svg"
+        class="arrowdown m-0"
+        size=""
+        slot="end"
+      ></ion-icon>
+    </ion-item>
+    <ion-button
+      [disabled]="submitAttempted"
+      (click)="requestRide()"
+      color="light"
+      fill="clear"
+      class="
+        btn-primary
+        full
+        mb-40
+        ion-no-margin
+        mx-20
+        mt-30
+        ion-no-padding
+        text-white
+        fontw700
+        font17
+        ion-text-center
+      "
+    >
+      <span
+        >NEXT &nbsp; &nbsp;
+        <ion-spinner
+          *ngIf="fidRideSpin"
+          name="circular"
+          style="width: 20px; height: 20px; color: white"
+        ></ion-spinner
+      ></span>
+    </ion-button>
+  </div>
+</div>

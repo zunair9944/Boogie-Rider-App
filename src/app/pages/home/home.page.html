@@ -1,0 +1,139 @@
+<app-header [city]="city" [loadingcity]="loadingcity" [bellIcon]="bellIcon"></app-header>
+<!-- <ion-img class="menu" src="/assets/icon/map.png"></ion-img>
+ -->
+
+<capacitor-google-map id="map" class="map"></capacitor-google-map>
+
+<p *ngIf="showSearchingForRider" class="driverWaiting green">
+  Searching for Driver...
+</p>
+
+<div class="mt-15 arrowDown2">
+    <ion-img class="arrow-down2" src="/assets/icon/arrow-down2.svg"></ion-img>
+</div>
+<!-- <ion-content class="map px-0">
+    <ion-item button (click)="moveTo(0.25)">
+        <ion-label>Move to 0.25</ion-label>
+    </ion-item>
+    <ion-item button (click)="moveTo(0.5)">
+        <ion-label>Move to 0.5</ion-label>
+    </ion-item>
+    <ion-item button (click)="moveTo(1)">
+        <ion-label>Move to 1</ion-label>
+    </ion-item>
+</ion-content> -->
+<!-- <ion-modal #modal class="modalMain" trigger="open-modal" [showBackdrop]="false" [initialBreakpoint]="0.6" [breakpoints]="[0.6, 0.85]" handleBehavior="cycle" [backdropDismiss]="false" [isOpen]="true" [canDismiss]="true">
+    <ng-template>
+        <div class="modalContainerUp">
+            <div class="modalContainer ion-margin-top px-20 ">
+                <ion-label class="font22 fontw500 lh26 text-black">Where do you want to go?</ion-label>
+                <ion-item class="customWithIcon mt-20">
+                    <ion-input color="dark" name="text" type="text" placeholder="Enter Pickup Point"></ion-input>
+                    <ion-icon src="/assets/icon/pin-red.svg" class="pin" size="small" slot="start"></ion-icon>
+                    <ion-icon src="/assets/icon/arrow-down.svg" class="arrow" size="small" slot="end"></ion-icon>
+                    <ion-label class="now font14 fontw400">Now</ion-label>
+                </ion-item>
+                <ion-item class="customWithIcon ps8 mt-12">
+                    <ion-input color="dark" name="text" type="text" placeholder="Enter Drop off"></ion-input>
+                    <ion-icon src="/assets/icon/drop-off.svg" class="drop" size="small" slot="start"></ion-icon>
+
+                </ion-item>
+
+                <ion-row class="mt-40 mb-40">
+                    <ion-col class="ion-no-padding">
+                        <p class="font18 fontw600 lh21">History</p>
+                    </ion-col>
+                    <ion-col class="ion-no-padding">
+                        <p class="font14 fontw400 lh21 ion-text-end text-grey-666666">Previous History</p>
+                    </ion-col>
+                </ion-row>
+
+
+
+            </div>
+
+
+            <ion-content class="modalContent">
+                <div class="ion-no-margin px-20" (click)="goTo()">
+                    <ion-row class="">
+                        <ion-col size="12" class="ion-no-padding">
+                            <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17">$22.05</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">18 Jan 6:20PM</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="mt-15">
+                        <ion-col size="12" class="ion-no-padding">
+                            <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17">$22.05</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">18 Jan 6:20PM</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="mt-15">
+                        <ion-col size="12" class="ion-no-padding">
+                            <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17">$22.05</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">18 Jan 6:20PM</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="mt-15">
+                        <ion-col size="12" class="ion-no-padding">
+                            <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17">$22.05</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">18 Jan 6:20PM</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="mt-15">
+                        <ion-col size="12" class="ion-no-padding">
+                            <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17">$22.05</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">18 Jan 6:20PM</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="mt-15">
+                        <ion-col size="12" class="ion-no-padding">
+                            <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17">$22.05</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">18 Jan 6:20PM</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="mt-15">
+                        <ion-col size="12" class="ion-no-padding">
+                            <p class="font16 fontw400 lh21 mb-5">AIyedun St- High School</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17">$22.05</p>
+                        </ion-col>
+                        <ion-col class="ion-no-padding">
+                            <p class="font14 fontw300 lh17 ion-text-end text-grey-666666">18 Jan 6:20PM</p>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </ion-content>
+        </div>
+    </ng-template>
+</ion-modal> -->

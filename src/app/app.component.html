@@ -1,0 +1,92 @@
+<ion-app>
+    <ion-menu contentId="main-content" class="mainMenu" type="overlay" swipeGesture="true">
+        <ion-content>
+            <ion-row>
+                <ion-col size="12" class="ion-text-end d-flex ion-justify-content-end px-30">
+                    <ion-menu-toggle>
+                        <ion-img class="w-18 mt-50 mr-30" src="/assets/icon/cross-2.svg"></ion-img>
+                    </ion-menu-toggle>
+                </ion-col>
+                <ion-col size="12" class="ion-text-end px-20 border-bottom-2 pb-30 mb-40">
+                    <div  class="edit-icon">
+                        <!-- <ion-img class="icon"  src="/assets/icon/edit-pen.svg"></ion-img> -->
+                        <ion-avatar>
+                            <ion-img [src]="userImage"></ion-img>
+                         </ion-avatar>
+                    </div>
+                    
+                    <div class="mt-20 d-flex ion-justify-content-between">
+                        <h1 class="ion-text-start font22 fontw600 mb-0 mt-5">{{userName}}</h1>
+                        <!-- <ion-item class="ion-no-padding pb-0 selectItem ion-no-border no-border ion-no-padding">
+                            <ion-select class="customSelect w-100 font12" interface="popover" placeholder="Passenger">
+                                <ion-select-option value="1" selected>Driver View</ion-select-option>
+                                <ion-select-option selelected="true" value="2">Rider View</ion-select-option>
+                            </ion-select>
+                            <ion-icon src="/assets/icon/arrow-down.svg" class="w-16 m-0" size="" slot="end"></ion-icon>
+                        </ion-item> -->
+                    </div>
+                    <div class="mt-0 d-flex ion-justify-content-between ion-align-items-center">
+
+                        <ion-button (click)="editProfile()" fill="clear" shape="round" class="buttonClear ion-no-margin ion-no-padding">
+                            <ion-img class="w-13" src="/assets/icon/edit-profile.svg"></ion-img>
+                            <span class="lh20 ml-8 fontw500 font12 ion-text-capitalize">Edit Profile</span>
+                        </ion-button>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row class="text-black mb-50">
+                <ion-menu-toggle class="w-100">
+                    <ion-col (click)="goToLink('/home')" size="12" class="px-20 pt-0 pb-30 d-flex ion-align-items-center">
+                        <ion-img class="w-24" src="/assets/icon/home.svg"></ion-img>
+                        <p class="font-17 fontw500 lh20 ml-16">Home</p>
+                    </ion-col>
+                </ion-menu-toggle>
+                <ion-menu-toggle class="w-100">
+                    <ion-col (click)="goToLink('/inbox')" size="12" class="px-20 pt-0 pb-30 d-flex ion-align-items-center">
+                        <ion-img class="w-24" src="/assets/icon/inbox.svg"></ion-img>
+                        <p class="font-17 fontw500 lh20 ml-16">Inbox</p>
+                    </ion-col>
+                </ion-menu-toggle>
+
+                <ion-menu-toggle class="w-100">
+                    <ion-col (click)="goToLink('/ride-history')" size="12" class="px-20 pt-0 pb-30 d-flex ion-align-items-center">
+                        <ion-img class="w-24" src="/assets/icon/my-ride.svg"></ion-img>
+                        <p class="font-17 fontw500 lh20 ml-16">Ride History</p>
+                    </ion-col>
+                </ion-menu-toggle>
+                <!-- <ion-menu-toggle class="w-100">
+                    <ion-col size="12" class="px-20 pt-0 pb-30 d-flex ion-align-items-center">
+                        <ion-img class="w-24" src="/assets/icon/payment.svg"></ion-img>
+                        <p class="font-17 fontw500 lh20 ml-16">Payment method</p>
+                    </ion-col>
+                </ion-menu-toggle> -->
+                <ion-menu-toggle class="w-100" id="signupnave">
+                    <ion-col (click)="goToLink('/sign-up')" size="12" class="px-20 pt-0 pb-30 d-flex ion-align-items-center">
+                        <ion-img class="w-24" src="/assets/icon/settings.svg"></ion-img>
+                        <p class="font-17 fontw500 lh20 ml-16">Settings</p>
+                    </ion-col>
+                </ion-menu-toggle>
+                <ion-menu-toggle class="w-100">
+                    <ion-col [routerLink]="['/customer-service']" size="12" class="px-20 pt-0 pb-30 d-flex ion-align-items-center">
+                        <ion-img class="w-24" src="/assets/icon/support.svg"></ion-img>
+                        <p class="font-17 fontw500 lh20 ml-16">Support</p>
+                    </ion-col>
+                </ion-menu-toggle>
+                <!-- <ion-menu-toggle class="w-100">
+                    <ion-col [routerLink]="['/be-driver']" size="12" class="px-20 pt-0 pb-30 d-flex ion-align-items-center">
+                        <ion-img class="w-24" src="/assets/icon/drive-with-boogie.svg"></ion-img>
+                        <p class="font-17 fontw500 lh20 ml-16">Drive with boogie</p>
+                    </ion-col>
+                </ion-menu-toggle> -->
+                <ion-menu-toggle class="w-100">
+                    <ion-col (click)="logout()" size="12" class="px-20 pt-0 pb-30 d-flex ion-align-items-center">
+                        <ion-img class="w-24" src="/assets/icon/logout.svg"></ion-img>
+                        <p class="font-17 fontw500 lh20 ml-16">Log Out</p>
+                    </ion-col>
+                </ion-menu-toggle>
+            </ion-row>
+        </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>

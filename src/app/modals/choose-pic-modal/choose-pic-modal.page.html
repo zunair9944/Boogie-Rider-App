@@ -1,0 +1,23 @@
+<ion-content scrollX="true">
+    <ion-img class="profilePicture mx-auto" src="/assets/icon/nic2.png"></ion-img>
+    <ion-img (click)="closeModel()" slot="fixed" class="checkblue mt-20" src="/assets/icon/check-blue.svg"></ion-img>
+</ion-content>
+<ion-footer class="ion-no-border ion-color-white">
+    <ion-grid class="">
+        <ion-row>
+            <ion-col size="12" class="d-flex ion-wrap ion-justify-content-center pt-0 pb-0 px-30 mb-0">
+                <div class="d-flex flex-column w-100 ion-align-items-center
+  ion-justify-content-center ">
+                    <ion-button [routerLink]="['/login']" color="light" fill="clear" class="btn-line ion-no-margin ion-no-padding text-white fontw700 font17 ion-text-center">
+                        <span>Choose from Gallery</span>
+                    </ion-button>
+                    <ion-buttons slot="secondary" fill="link" class="mt-30 d-flex ion-align-items-center">
+                        <ion-img slot="start" class="" src="/assets/icon/delete-icon.svg"></ion-img>
+                        <span class="font12 mt-0 text-grey-666666 fontw500 ml-8">Delete</span>
+                    </ion-buttons>
+                </div>
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-footer>

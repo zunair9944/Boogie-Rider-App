@@ -1,0 +1,83 @@
+<ion-header class="chatHeader ion-no-border">
+    <ion-toolbar>
+        <ion-row>
+            <ion-col size="8" class="left ion-no-padding d-flex ion-justify-content-start ion-align-items-center">
+                <ion-img (click)="closeChatModel()" class="arrow-left" src="/assets/icon/arrow-left.svg"></ion-img>
+                <ion-img class="user" src="/assets/icon/user-circle.png"></ion-img>
+                <div>
+                    <h4 class="font15 fontw500 lh18 text-grey-01 m-0">Smith Jho</h4>
+                    <p class="font10 fontw400 lh15  text-grey-3c m-0">Online</p>
+                </div>
+            </ion-col>
+            <ion-col size="4" class="right ion-no-padding d-flex ion-justify-content-end ion-align-items-center">
+                <ion-img class="phone" src="/assets/icon/phone.svg"></ion-img>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="container">
+    <ion-grid fixed class="ion-no-padding">
+        <ion-row>
+            <ion-col size="12" class="send mt-30">
+                <div class="chatContainer">
+                    <div class="time">
+                        <span>14:03</span>
+                        <ion-img class="dots" src="/assets/icon/chat-dots.svg"></ion-img>
+                    </div>
+                    <div class="chatBoxUp">
+                        <div class="chatBox">
+                            <span>Hello....</span>
+                        </div>
+                        <ion-img class="tick" src="/assets/icon/chat-tick.svg"></ion-img>
+                    </div>
+                </div>
+            </ion-col>
+            <ion-col size="12" class="received mt-30">
+                <div class="chatContainer">
+                    <div class="time">
+                        <span>12:36</span>
+                        <ion-img class="dots" src="/assets/icon/chat-dots.svg"></ion-img>
+                    </div>
+                    <div class="chatBoxUp">
+                        <div class="chatBox">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui, facilisis a mi rutrum integer. Augue commodo convallis dictum bibendum tellus. Ipsum lobortis elit sit amet Leo.</span>
+                        </div>
+                    </div>
+                </div>
+            </ion-col>
+            <ion-col size="12" class="received mt-30">
+                <div class="chatContainer">
+                    <div class="time">
+                        <span>12:37</span>
+                        <ion-img class="dots" src="/assets/icon/chat-dots.svg"></ion-img>
+                    </div>
+                    <div class="chatBoxUp">
+                        <div class="chatBox">
+                            <span>Where are you?</span>
+                        </div>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer class="ion-no-border">
+    <ion-content scrollX="true" class="suggestion">
+        <div class="d-flex">
+            <span>Where are You</span>
+            <span>I am waiting</span>
+            <span>I am waiting</span>
+            <span>I am waiting</span>
+            <span>I am waiting</span>
+            <span>I am waiting</span>
+        </div>
+    </ion-content>
+    <ion-toolbar>
+        <div class="containerFooter d-flex ion-justify-content-between">
+            <div class="inputChat">
+                <ion-input color="dark" name="text" type="text" placeholder="Enter Pickup Point"></ion-input>
+            </div>
+            <ion-img class="mic" src="/assets/icon/mic.svg"></ion-img>
+        </div>
+    </ion-toolbar>
+</ion-footer>

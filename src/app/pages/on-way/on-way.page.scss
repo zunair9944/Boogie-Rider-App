@@ -1,0 +1,54 @@
+.map {
+    margin-top: -105px;
+}
+
+.modalContainer {
+    padding-top: 24px;
+}
+
+.modalMain {
+    --background: rgba(255, 255, 255, 0.918);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
+    bottom: 0px;
+    pointer-events: none !important;
+    .modalContent {
+        --background: rgba(255, 255, 255, 0);
+        --padding: 0;
+        max-height: 370px;
+        --border-radius: 0px;
+    }
+    &::part(handle) {
+        background-color: #E5E5EB;
+        width: 63px;
+        height: 4px;
+        margin-top: 12px;
+    }
+}
+
+ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 0;
+    display: none;
+}
+
+.menu {
+    margin-top: -104px;
+}
+
+.head {
+    .user {
+        width: 48px;
+    }
+}
+
+.email {
+    margin-left: 16px;
+}
+
+.footer {
+    background: #FFFFFF;
+    box-shadow: 0px -2px 11px rgb(0 0 0 / 25%);
+    padding: 15px 35px;
+    width: 100%;
+    margin-top: 25px;
+}

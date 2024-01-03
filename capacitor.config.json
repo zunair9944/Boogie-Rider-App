@@ -1,0 +1,6 @@
+{
+	"appId": "com.boogie.riderapp",
+	"appName": "Boogie Ride",
+	"webDir": "www", 
+	"bundledWebRuntime": false
+}

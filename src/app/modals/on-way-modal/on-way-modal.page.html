@@ -1,0 +1,50 @@
+<div id="capture"
+  class="modalContainerUp h-100 d-flex flex-column ion-justify-content-center"
+>
+  <div class="modalContainer px-20">
+    <div class="head d-flex mt-20 ion-align-items-center">
+      <div>
+        <ion-img
+          class="user userCircleLg"
+          src="{{ data.driverData.profile_image }}"
+        ></ion-img>
+      </div>
+      <div class="flex-fill w-100 ml-15">
+        <h4 class="font16 fontw700 text-black mt-0 mb-5">
+          {{ data.driverData.name }}
+        </h4>
+      </div>
+      <div class="ion-text-center min126 d-flex ion-justify-content-end">
+        <ion-img
+          (click)="openCallingModal()"
+          class="w-44"
+          src="/assets/icon/phone.svg"
+        ></ion-img>
+        <ion-img
+          (click)="goToChat()"
+          class="w-44 email"
+          src="/assets/icon/email.svg"
+        ></ion-img>
+      </div>
+    </div>
+  </div>
+  <ion-row class="footer">
+    <ion-col size="12" class="ion-no-padding ion-text-end">
+      <ion-button
+        (click)="confirmCancleRideRequest()"
+        color="light"
+        fill="clear"
+        class="
+          btn-line
+          ion-no-margin ion-no-padding
+          text-white
+          fontw700
+          font16
+          ion-text-center
+        "
+      >
+        <span>CANCEL</span>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</div>

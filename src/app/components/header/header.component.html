@@ -1,0 +1,22 @@
+<ion-grid class="header" [fixed]="true">
+
+    <ion-row>
+        <ion-col size="3" class="leftCol ion-no-padding">
+            <div class="ion-page" id="main-content">
+                <ion-menu-toggle autoHide="false">
+                    <ion-img class="menu" src="/assets/icon/menu.svg"></ion-img>
+                </ion-menu-toggle>
+            </div>
+        </ion-col>
+        <ion-col size="6" class="ion-no-padding d-flex ion-justify-content-center ion-align-items-start">
+            <div class="centerIcon d-flex ion-justify-content-center ion-align-items-center">
+                <ion-img class="pin" src="/assets/icon/pin-pink.svg"></ion-img>
+                 &nbsp;<ion-spinner *ngIf="loadingIcon" class="spin-global black-color" name="circular"></ion-spinner>
+                <p  *ngIf="!loadingIcon" class="font-18 fontw500 text-black lh17 m-0">{{cityName}}</p>
+            </div>
+        </ion-col>
+        <ion-col (click)="openNotifications()" size="3" class="ion-no-padding ion-text-end">
+            <ion-img class=" bell " [src]="notifyIcon"></ion-img>
+        </ion-col>
+    </ion-row>
+</ion-grid>

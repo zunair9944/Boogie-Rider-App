@@ -1,0 +1,142 @@
+.map {
+    margin-top: -105px;
+}
+
+.modalContainer {
+    padding-top: 24px;
+}
+
+.modalMain {
+    --background: rgba(255, 255, 255, 0.918);
+    box-shadow: 0px -14px 20px rgba(0, 0, 0, 0.05);
+    bottom: 0px;
+    pointer-events: none !important;
+    .modalContent {
+        --background: rgba(255, 255, 255, 0);
+        --padding: 0;
+        max-height: 370px;
+        --border-radius: 0px;
+    }
+    &::part(handle) {
+        background-color: #E5E5EB;
+        width: 63px;
+        height: 4px;
+        margin-top: 48px;
+    }
+    &.hidehandle {
+        --background: rgba(255, 255, 255, 1);
+        --border-radius: 0px;
+        &::part(handle) {
+            display: none;
+        }
+    }
+    &:part(backdrop) {
+        background: rgba(209, 213, 219);
+        opacity: 0;
+        display: none;
+    }
+}
+
+ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 0;
+    display: none;
+}
+
+.menu {
+    margin-top: -104px;
+}
+
+.paymentm {
+    background: #FFFFFF;
+    border: 1px solid #DDDEEE;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(13.5914px);
+    border-radius: 5px;
+    --inner-border-width: 0;
+    --inner-border-width: 0;
+    margin: 10px 20px;
+    padding: 0 0 0 12px;
+    .arrowdown {
+        width: 16px;
+    }
+    .payment {
+        width: 26px;
+    }
+}
+
+.driverWaiting {
+    background: #884E7E;
+    opacity: 0.8;
+    padding: 10.5px 20px;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.head {
+    .user {
+        width: 63px;
+    }
+    .pin {
+        width: 13px;
+        margin-right: 10px;
+    }
+    .car {
+        width: 70px;
+        margin: 0 auto;
+    }
+    .min126 {
+        min-width: 126px;
+    }
+    .startButtn {
+        background: #03A772;
+        border-radius: 40px;
+        width: 53px;
+        margin-left: 0px;
+        height: 23px;
+        .start {
+            width: 12px;
+            margin-right: 4px;
+        }
+    }
+}
+
+.hr {
+    margin: 25px 0;
+    border-bottom: solid 1px #dedede;
+}
+
+.hr2 {
+    border-bottom: solid 1px #dedede;
+}
+
+.border-Dashed {
+    border-bottom: 1px dashed #DEDEE8;
+    margin: 20px 0 26px 0;
+    margin-left: 17px;
+    max-width: calc(100% - 17px) !important;
+    ion-img {
+        margin-top: -9px;
+        margin-bottom: -40px;
+        float: right;
+        margin-right: 40px;
+    }
+}
+
+.borderD {
+    &::after {
+        content: "";
+        width: 0px;
+        height: 83px;
+        position: absolute;
+        margin: 25px 20px 0px 14px;
+        border-left: 1px dashed #DEDEE8;
+        z-index: -1;
+    }
+}
+
+.email {
+    margin-left: 16px;
+}

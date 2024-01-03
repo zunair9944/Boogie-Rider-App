@@ -1,0 +1,36 @@
+.container {
+    --padding-bottom: 50px;
+}
+
+.login_center {
+    padding: 2vh 41px 2vh 41px;
+}
+
+ion-footer {
+    background: #FFFFFF;
+    box-shadow: 0px -14px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 18px 18px 0 0;
+    padding: 40px 0;
+}
+
+.arrowback {
+    width: 24px;
+}
+
+// @media (max-height: 750px) {
+//     .login_center {
+//         padding: 2vh 41px 2vh 41px;
+//     }
+//     .login_top {
+//         margin-top: 80px;
+//         ion-col {
+//             ion-img {
+//                 width: 180px;
+//             }
+//         }
+//     }
+//     .bg_center {
+//         width: 16vh;
+//         top: -20px;
+//     }
+// }

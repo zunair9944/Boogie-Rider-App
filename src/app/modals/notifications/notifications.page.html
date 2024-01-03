@@ -1,0 +1,92 @@
+<ion-header class="chatHeader ion-no-border">
+    <ion-toolbar>
+        <ion-row>
+            <ion-col (click)="closeModel()" size="8" class="left ion-no-padding d-flex ion-justify-content-start ion-align-items-center">
+                <ion-img class="cross" src="/assets/icon/cross-black.svg"></ion-img>
+            </ion-col>
+            <ion-col size="4" class="right ion-no-padding d-flex ion-justify-content-end ion-align-items-center">
+                <ion-img class="user userCircleSm" [src]="userImage"></ion-img>
+            </ion-col>
+            
+        </ion-row>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid fixed class="py-0 px-20">
+        <ion-row class="mt-24 border-bottom-1 pb-16">
+            <ion-col size="6" class="ion-no-padding">
+                <h1 class="font20 fontw700 text-black m-0">Notifications</h1>
+            </ion-col>
+            <ion-col size="6" class="ion-no-padding ion-text-end">
+                <ion-badge class="badge"> <small> {{unreadCount}} New </small> 
+                    <!-- <ion-spinner *ngIf="showLoadingSpin" class="ion-justify-content-center" style="width: 20px; height: 20px; color: purple;" name="circular"></ion-spinner> -->
+                </ion-badge>
+            </ion-col>
+        </ion-row>
+
+        <ion-row *ngFor="let notify of notificationList" class="border-bottom-1 py-24">
+            <ion-col size="1" class="ion-no-padding">
+                <span class="bell" [ngClass]="{'active': notify.read === 0}">
+                    <ion-img class="w-15" src="/assets/icon/bel.svg"></ion-img>
+            </span>
+            </ion-col>
+            <ion-col size="11" class="ion-no-padding">
+                <div class="d-flex ion-justify-content-between mb-5">
+                    <h3 class="font14 fontw700 text-grey-38 m-0">{{getType(notify.type)}} </h3>
+                    <h4 class="font12 fontw400 text-grey-8e m-0">{{notify.created_at}}</h4>
+                </div>
+                <p class="font12 fontw400 text-grey-38 m-0">{{notify.data}}
+                    <b *ngIf="notify.request_time">Oct 17, 2022 11:38:00.</b>
+                </p>
+
+            </ion-col>
+        </ion-row>
+        <!-- <ion-row class="border-bottom-1 py-24">
+            <ion-col size="1" class="ion-no-padding">
+                <span class="bell">
+              <ion-img class="w-15" src="/assets/icon/user.svg"></ion-img>
+            </span>
+            </ion-col>
+            <ion-col size="11" class="ion-no-padding">
+                <div class="d-flex ion-justify-content-between mb-5">
+                    <h3 class="font14 fontw700 text-grey-38 m-0">New User ride request </h3>
+                    <h4 class="font12 fontw400 text-grey-8e m-0">50s ago</h4>
+                </div>
+                <p class="font12 fontw400 text-grey-38 m-0">New User has been added in the system as “Admin”</p>
+
+            </ion-col>
+        </ion-row>
+        <ion-row class="border-bottom-1 py-24">
+            <ion-col size="1" class="ion-no-padding">
+                <span class="bell">
+              <ion-img class="w-15" src="/assets/icon/calender-check.svg"></ion-img>
+            </span>
+            </ion-col>
+            <ion-col size="11" class="ion-no-padding">
+                <div class="d-flex ion-justify-content-between mb-5">
+                    <h3 class="font14 fontw700 text-grey-38 m-0">Ride Scheduled</h3>
+                    <h4 class="font12 fontw400 text-grey-8e m-0">50s ago</h4>
+                </div>
+                <p class="font12 fontw400 text-grey-38 m-0">New User has been added in the system as “Admin”</p>
+
+            </ion-col>
+        </ion-row>
+        <ion-row class="border-bottom-1 py-24">
+            <ion-col size="1" class="ion-no-padding">
+                <span class="bell">
+              <ion-img class="w-18" src="/assets/icon/plus.svg"></ion-img>
+            </span>
+            </ion-col>
+            <ion-col size="11" class="ion-no-padding">
+                <div class="d-flex ion-justify-content-between mb-5">
+                    <h3 class="font14 fontw700 text-grey-38 m-0">New User Added</h3>
+                    <h4 class="font12 fontw400 text-grey-8e m-0">50s ago</h4>
+                </div>
+                <p class="font12 fontw400 text-grey-38 m-0">New User has been added in the system as “Admin”</p>
+
+            </ion-col>
+        </ion-row> -->
+    </ion-grid>
+
+</ion-content>

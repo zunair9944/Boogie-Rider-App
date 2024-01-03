@@ -1,0 +1,16 @@
+<ion-content>
+    <div class="vh-100 position-relative z2 calling d-flex flex-column ion-justify-content-between ion-align-items-center">
+        <div size="12" class="h-100 calingup d-flex flex-column ion-justify-content-center ion-align-items-center mt-20">
+            <ion-img class="user " src="/assets/icon/user-circle.png "></ion-img>
+            <p class="fontw600 font22 mt-10 mb-15">Smith Jho</p>
+            <p class="fontw300 font17 mb-15 lh18">Calling...</p>
+        </div>
+
+        <div size="12" class="calingdown d-flex ion-justify-content-center ion-align-items-center">
+            <ion-img class="speaker " src="/assets/icon/speaker.svg"></ion-img>
+
+            <ion-img (click)="closeModel()" class="callend ml-40" src="/assets/icon/call-end.svg"></ion-img>
+        </div>
+    </div>
+    <ion-img class="bg" src="/assets/icon/calling-bg.svg"></ion-img>
+</ion-content>

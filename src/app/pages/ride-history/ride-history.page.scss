@@ -1,0 +1,39 @@
+.container {
+    --padding-bottom: 10px;
+    --background: #ffffff;
+}
+
+.content {
+    background: #F6F6F9;
+}
+
+.arrowback {
+    width: 16px;
+    margin-right: -10px;
+}
+
+.hr {
+    border-bottom: solid 1px #DEDEE8;
+}
+
+.historyList {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.accourdian {
+    background-color: white;
+    .accordion-collapsed {
+        opacity: 0.75;
+    }
+}
+
+.accourdianHead {
+    .ion-accordion-toggle-icon {
+        display: none !important;
+    }
+}
+
+.w-100 {
+    width: 100%;
+}

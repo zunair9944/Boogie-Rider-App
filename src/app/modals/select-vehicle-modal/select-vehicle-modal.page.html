@@ -1,0 +1,78 @@
+<div class="modalContainerUp">
+  <div class="modalContainer px-20 ">
+      <ion-item class="customWithIconTwo mt-0">
+          <ion-input color="dark" name="text" type="text" placeholder="Enter Pickup Point"></ion-input>
+          <ion-icon src="/assets/icon/pin-red.svg" class="pin" size="small" slot="start"></ion-icon>
+          <ion-icon src="/assets/icon/arrow-down.svg" class="arrow" size="small" slot="end"></ion-icon>
+          <ion-label class="now font14 fontw400">Now</ion-label>
+      </ion-item>
+      <ion-item class="customWithIconTwo hideborder ps8 mt-12">
+          <ion-input color="dark" name="text" type="text" placeholder="Enter Drop off"></ion-input>
+          <ion-icon src="/assets/icon/drop-off.svg" class="drop" size="small" slot="start"></ion-icon>
+      </ion-item>
+
+      <ion-content scrollX="true" scrollY="false" class="product mt-30">
+          <ul class="d-flex ion-align-items-center">
+              <li class="productSingle ion-text-center">
+                  <div class="imgContainer">
+                      <ion-img class="arrow-down2" src="/assets/icon/car1.png"></ion-img>
+                  </div>
+                  <p class="font10 fontw700 lh16">BoogIe</p>
+                  <ion-button class="font10 fontw600 lh16" expand="full" fill="clear">
+                      <ion-img class="userblack" src="/assets/icon/user-black.svg"></ion-img>
+                      <span>1-4</span>
+                  </ion-button>
+                  <h3 class="font12 fontw300 lh16 m-0">$15.00</h3>
+              </li>
+              <li class="productSingle ion-text-center">
+                  <div class="imgContainer">
+                      <ion-img class="arrow-down2" src="/assets/icon/car2.png"></ion-img>
+                  </div>
+                  <p class="font10 fontw700 lh16">BoogIe</p>
+                  <ion-button class="font10 fontw600 lh16" expand="full" fill="clear">
+                      <ion-img class="userblack" src="/assets/icon/user-black.svg"></ion-img>
+                      <span>1-4</span>
+                  </ion-button>
+                  <h3 class="font12 fontw300 lh16 m-0">$15.00</h3>
+              </li>
+              <li class="productSingle ion-text-center">
+                  <div class="imgContainer">
+                      <ion-img class="arrow-down2" src="/assets/icon/car3.png"></ion-img>
+                  </div>
+                  <p class="font10 fontw700 lh16">BoogIe</p>
+                  <ion-button class="font10 fontw600 lh16" expand="full" fill="clear">
+                      <ion-img class="userblack" src="/assets/icon/user-black.svg"></ion-img>
+                      <span>1-4</span>
+                  </ion-button>
+                  <h3 class="font12 fontw300 lh16 m-0">$15.00</h3>
+              </li>
+              <li class="productSingle ion-text-center">
+                  <div class="imgContainer">
+                      <ion-img class="arrow-down2" src="/assets/icon/car4.png"></ion-img>
+                  </div>
+                  <p class="font10 fontw700 lh16 mt-0">BoogIe</p>
+                  <ion-button class="font10 fontw600 lh16" expand="full" fill="clear">
+                      <ion-img class="userblack" src="/assets/icon/user-black.svg"></ion-img>
+                      <span>1-4</span>
+                  </ion-button>
+                  <h3 class="font12 fontw300 lh16 m-0">$15.00</h3>
+              </li>
+          </ul>
+      </ion-content>
+
+
+  </div>
+  <ion-item class="paymentm ion-no-padding pb-30 selectItem">
+      <ion-select class="customSelect pl30 w-100" interface="popover" placeholder="Select">
+          <ion-select-option value="1">Select one</ion-select-option>
+          <ion-select-option value="2">Select two</ion-select-option>
+          <ion-select-option value="3">Select three</ion-select-option>
+      </ion-select>
+      <ion-icon src="/assets/icon/visa.svg" class="payment m-0" size="" slot="start"></ion-icon>
+      <ion-icon src="/assets/icon/arrow-down.svg" class="arrowdown m-0" size="" slot="end"></ion-icon>
+  </ion-item>
+  <ion-button (click)="goTo()"  color="light" fill="clear" class="btn-primary full mb-40 ion-no-margin mx-20 mt-30 ion-no-padding text-white fontw700 font17 ion-text-center">
+      <span>NEXT</span>
+  </ion-button>
+
+</div>

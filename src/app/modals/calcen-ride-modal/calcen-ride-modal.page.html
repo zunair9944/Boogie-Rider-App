@@ -1,0 +1,47 @@
+<ion-grid fixed class="ion-no-padding">
+  <ion-row>
+    <ion-col size="12" class="ion-text-center ion-no-padding px-30">
+      <h1 class="font20 fontw700 lh23 mt-40">
+        Are you sure you <br />
+        want to cancel this ride?
+      </h1>
+      <p class="font15 fontw400 lh17 text-grey-666666 opacity75">
+        You will be charged for this ride request based on our cancellation
+        policy.
+      </p>
+    </ion-col>
+    <ion-col size="12" class="ion-text-center ion-no-padding mt-20">
+      <ion-button
+        (click)="handleCancleRideRequest()"
+        color="light"
+        fill="clear"
+        class="
+          btn-primary
+          ion-no-margin ion-no-padding
+          text-white
+          fontw700
+          font17
+          ion-text-center
+        "
+      >
+        <span>YES!
+          &nbsp;
+          &nbsp;
+          <ion-spinner *ngIf="showLoadingSpin" class="spin-global" name="circular"></ion-spinner>
+        </span>
+      </ion-button>
+    </ion-col>
+    <ion-col size="12" class="ion-text-center ion-no-padding mb-30">
+      <ion-button
+        (click)="closeModel()"
+        color="light"
+        fill="clear"
+        class="btn-link-grey text-underline text-grey-666666"
+      >
+        <span class="font15 fontw400 lh18 text-grey-666666 text-capitalize"
+          >Close</span
+        >
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

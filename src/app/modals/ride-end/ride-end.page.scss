@@ -1,0 +1,130 @@
+.btn-primary {
+  border-radius: 25px;
+  --box-shadow: 0 0 0 transparent;
+  min-height: 44px !important;
+  max-height: 44px;
+  width: 152px;
+  --padding-start: 14px;
+  --padding-end: 14px;
+  background: linear-gradient(89.93deg, #9f5f91 -27.04%, #582c57 105.09%);
+  color: #ffffff;
+  --border: solid 0px #000;
+}
+
+.btn-link-grey {
+  text-align: center;
+  text-decoration-line: underline;
+  opacity: 0.75;
+}
+
+.head {
+  background: #f4f4f4;
+  .box {
+    width: 45px;
+    height: 45px;
+    background: #ffffff;
+    border: 1px solid rgba(141, 82, 130, 0.2);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(13.5914px);
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 20px;
+      display: flex;
+      align-items: flex-end;
+      text-align: center;
+      color: #000000;
+    }
+  }
+  .active-box {
+    background: #884e7e !important;
+    span {
+      color: #fff;
+    }
+  }
+}
+
+.customInputBox {
+  --background: #ffffff;
+  --background-activated: #fff;
+  --background-hover: #fff;
+  --color: #000000;
+  --border-color: rgba(141, 82, 130, 0.2);
+  --inner-padding-top: 0;
+  --highlight-height: 0px;
+  --padding-start: 17px;
+  --padding-top: 0;
+  --padding-bottom: 0px;
+  margin-bottom: 30px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  width: 210px;
+  height: 45px;
+  ion-input {
+    --placeholder-color: #000000 !important;
+    --placeholder-opacity: 1;
+    --placeholder-font-weight: 400;
+  }
+}
+
+.customInputComment {
+  --background: transparent;
+  --color: #000000;
+  --border-color: transparent;
+  --inner-padding-top: 0;
+  --highlight-height: 0;
+  --highlight-color-invalid: transparent;
+  --highlight-color-valid: transparent;
+  --highlight-height: transparent;
+  --highlight-color-focused: transparent;
+  --padding-start: 0;
+  --padding-top: 0;
+  --padding-bottom: 0px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  border-radius: 0px;
+  border-bottom: 1px solid #dbdbdb;
+  width: 280px;
+  height: 45px;
+  ion-input {
+    --placeholder-color: #000000 !important;
+    --placeholder-opacity: 1;
+    --placeholder-font-weight: 400;
+  }
+  .ng-invalid{
+    border-bottom-color: transparent;
+ }
+ .ng-valid{
+    border-bottom-color: transparent;
+ }
+}
+
+.dating {
+  .user {
+    width: 70px;
+  }
+}
+
+.startRating {
+  .ratingSingle {
+    .img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+
+.star {
+  width: 25px;
+  height: 25px;
+}
+.star-grey {
+  color: rgb(136, 136, 136);
+}
+.star-yellow {
+  color: rgb(192, 192, 0);
+}
